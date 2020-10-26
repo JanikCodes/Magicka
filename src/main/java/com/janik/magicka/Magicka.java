@@ -1,5 +1,7 @@
 package com.janik.magicka;
 
+import com.janik.magicka.items.Ice_sword;
+import com.janik.magicka.items.ToolMaterial_Ice_sword;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -21,6 +23,6 @@ public class Magicka implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("magick","bacon"), BACON_ITEM);
         Registry.register(Registry.ITEM, new Identifier("magick","cooked_bacon"), COOKED_BACON_ITEM);
         Registry.register(Registry.ITEM, new Identifier("magick","enderbowl"), ENDERBOWL_ITEM);
-
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new Ice_sword(new ToolMaterial_Ice_sword()));
     }
 }
