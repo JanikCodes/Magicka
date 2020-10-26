@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "magick",
+  "version": "${version}",
+
+  "name": "Magicka",
+  "description": "Testin! This will be updated later.",
+  "authors": [
+    "Janik"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/magick/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.janik.magicka.Magicka"
+    ]
+  },
+  "mixins": [
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.15.2"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}
