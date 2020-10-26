@@ -1,6 +1,4 @@
 package com.janik.magicka.items;
-
-import com.janik.magicka.Magicka;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -18,7 +16,7 @@ public class ToolMaterial_Ice_sword implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 2.5f;
+        return 6.5f;
     }
 
     @Override
