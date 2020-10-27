@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "# #",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "magick:ice_shard"
+    }
+  },
+  "result": {
+    "item": "magick:ice_chestplate",
+    "count": 1
+  }
+}

@@ -29,7 +29,7 @@ public class Magicka implements ModInitializer {
 
 
     public static final ArmorMaterial ICEARMOR_MATERIAL = new IceArmorMaterial();
-    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.MISC));
