@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(Item.class)
-public class WritableBookItemMixins {
+public class ItemMixins {
 
     @Inject(method = "useOnBlock", at = @At("HEAD"), cancellable = true)
     public void onUseOnBlock(ItemUsageContext context, CallbackInfoReturnable cbi){
