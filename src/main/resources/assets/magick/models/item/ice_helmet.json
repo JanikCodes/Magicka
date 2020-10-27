@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "magick:item/ice_helmet",
+    "layer1": "magick:item/ice_helmet_overlay"
+  }
+}

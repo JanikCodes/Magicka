@@ -33,13 +33,14 @@ public class Magicka implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("magick","enderbowl"), ENDERBOWL_ITEM);
 
         //Ice items
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_shard"), ICE_SHARD_ITEM);
-        //Tools
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new IceSword(new ToolMaterialIce()));
-        //Armor
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_helmet"), ICE_HELMET);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_chestplate"), ICE_CHESTPLATE);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_leggings"), ICE_LEGGINGS);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_boots"),ICE_BOOTS);
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_shard"), ICE_SHARD_ITEM);
+            //Tools
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new IceSword(new ToolMaterialIce()));
+            //Armor
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_helmet"), ICE_HELMET);
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_chestplate"), ICE_CHESTPLATE);
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_leggings"), ICE_LEGGINGS);
+            Registry.register(Registry.ITEM, new Identifier("magick","ice_boots"),ICE_BOOTS);
+
     }
 }
