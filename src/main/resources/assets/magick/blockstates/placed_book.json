@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "magick:block/placed_book"
+    }
+  }
+}

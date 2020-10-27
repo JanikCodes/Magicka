@@ -26,6 +26,7 @@
     ]
   },
   "mixins": [
+    "magicka.mixins.json"
   ],
 
   "depends": {
