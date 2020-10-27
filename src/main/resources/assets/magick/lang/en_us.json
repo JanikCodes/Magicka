@@ -7,5 +7,6 @@
   "item.magick.ice_helmet": "Ice helmet",
   "item.magick.ice_chestplate": "Ice chestplate",
   "item.magick.ice_leggings": "Ice leggings",
-  "item.magick.ice_boots": "Ice boots"
+  "item.magick.ice_boots": "Ice boots",
+  "itemGroup.magick.itemgroup": "Magicka"
 }

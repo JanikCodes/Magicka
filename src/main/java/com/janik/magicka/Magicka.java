@@ -28,7 +28,7 @@ public class Magicka implements ModInitializer {
 
     //Item group for our mod
     public static final ItemGroup MAGICKAGROUP = FabricItemGroupBuilder.create(
-            new Identifier("tutorial", "other"))
+            new Identifier(MOD_ID, "itemgroup"))
             .icon(() -> new ItemStack(Items.BOWL))
             .build();
 

@@ -16,9 +16,10 @@ public class IceSword extends SwordItem {
 
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-
-        if(target instanceof LivingEntity) {
-            ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3, 2, true, false));
+        if(!attacker.getEntityWorld().isClient){
+            if(target instanceof LivingEntity) {
+                ((LivingEntity) target).addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 3, 2, false, true));
+            }
         }
         return super.postHit(stack, target, attacker);
     }
