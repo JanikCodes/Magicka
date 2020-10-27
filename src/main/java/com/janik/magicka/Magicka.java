@@ -1,9 +1,15 @@
 package com.janik.magicka;
 
+import com.janik.magicka.blocks.PlacedBookBlock;
+import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
 import com.janik.magicka.items.IceArmorMaterial;
 import com.janik.magicka.items.IceSword;
 import com.janik.magicka.items.ToolMaterialIce;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.Block;
+import net.minecraft.block.Material;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -13,6 +19,9 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 public class Magicka implements ModInitializer {
+
+    public static String MOD_ID = "magick";
+
 
     public static final Item BACON_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).food(new FoodComponent.Builder().hunger(1).saturationModifier(7f).alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.POISON,20*3), 0.1f).build()).rarity(Rarity.COMMON));
     public static final Item COOKED_BACON_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).build()).rarity(Rarity.COMMON));
@@ -26,20 +35,28 @@ public class Magicka implements ModInitializer {
     public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.MISC));
 
+    //Placed Book
+    public static final Block PLACED_BOOK = new PlacedBookBlock(FabricBlockSettings.of(Material.WOOL).nonOpaque());
+    public static BlockEntityType<PlacedBookBlockEntity> PLACED_BOOK_BLOCK_ENTITY;
+
     @Override
     public void onInitialize() {
-        Registry.register(Registry.ITEM, new Identifier("magick","bacon"), BACON_ITEM);
-        Registry.register(Registry.ITEM, new Identifier("magick","cooked_bacon"), COOKED_BACON_ITEM);
-        Registry.register(Registry.ITEM, new Identifier("magick","enderbowl"), ENDERBOWL_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"bacon"), BACON_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cooked_bacon"), COOKED_BACON_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"enderbowl"), ENDERBOWL_ITEM);
 
         //Ice items
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_shard"), ICE_SHARD_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_shard"), ICE_SHARD_ITEM);
         //Tools
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new IceSword(new ToolMaterialIce()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_sword"), new IceSword(new ToolMaterialIce()));
         //Armor
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_helmet"), ICE_HELMET);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_chestplate"), ICE_CHESTPLATE);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_leggings"), ICE_LEGGINGS);
-        Registry.register(Registry.ITEM, new Identifier("magick","ice_boots"),ICE_BOOTS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_helmet"), ICE_HELMET);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_chestplate"), ICE_CHESTPLATE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_leggings"), ICE_LEGGINGS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_boots"),ICE_BOOTS);
+        //PLaced Book
+        Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "placed_book"), PLACED_BOOK);
+        PLACED_BOOK_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "placed_book"), BlockEntityType.Builder.create(PlacedBookBlockEntity::new, PLACED_BOOK).build(null));
+
     }
 }
