@@ -3,5 +3,9 @@
   "item.magick.cooked_bacon": "Cooked bacon",
   "item.magick.enderbowl": "Ender bowl",
   "item.magick.ice_sword": "Ice sword",
-  "item.magick.ice_shard": "Ice shard"
+  "item.magick.ice_shard": "Ice shard",
+  "item.magick.ice_helmet": "Ice helmet",
+  "item.magick.ice_chestplate": "Ice chestplate",
+  "item.magick.ice_leggings": "Ice leggings",
+  "item.magick.ice_boots": "Ice boots"
 }

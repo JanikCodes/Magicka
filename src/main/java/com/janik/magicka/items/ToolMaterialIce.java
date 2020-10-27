@@ -10,11 +10,6 @@ public class ToolMaterialIce implements ToolMaterial {
     }
 
     @Override
-    public float getMiningSpeed() {
-        return 2;
-    }
-
-    @Override
     public float getAttackDamage() {
         return 6.5f;
     }
@@ -32,5 +27,10 @@ public class ToolMaterialIce implements ToolMaterial {
     @Override
     public Ingredient getRepairIngredient() {
         return Ingredient.ofItems();
+    }
+
+    @Override
+    public float getMiningSpeedMultiplier() {
+        return 0;
     }
 }
