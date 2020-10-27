@@ -3,14 +3,12 @@ package com.janik.magicka;
 import com.janik.magicka.blocks.PlacedBookBlock;
 import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
 import com.janik.magicka.items.IceArmorMaterial;
-import com.janik.magicka.items.IceArmorMethode;
 import com.janik.magicka.items.IceSword;
-import com.janik.magicka.items.ToolMaterialIce;
+import com.janik.magicka.items.IceToolMaterial;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
@@ -58,7 +56,7 @@ public class Magicka implements ModInitializer {
         //Ice items
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_shard"), ICE_SHARD_ITEM);
         //Tools
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_sword"), new IceSword(new ToolMaterialIce()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_sword"), new IceSword(new IceToolMaterial()));
         //Armor
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_helmet"), ICE_HELMET);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_chestplate"), ICE_CHESTPLATE);

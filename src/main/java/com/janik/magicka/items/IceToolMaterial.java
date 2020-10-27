@@ -2,7 +2,7 @@ package com.janik.magicka.items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ToolMaterialIce implements ToolMaterial {
+public class IceToolMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {

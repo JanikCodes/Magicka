@@ -29,6 +29,21 @@ public abstract class PlayerEntityMixins {
                     entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 5, 1, false, false, true));
                 }
             }
+            if (itemStack.getItem() == Magicka.ICE_CHESTPLATE) {
+                if (entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW_BLOCK) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.ICE)){
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 5, 1, false, false, true));
+                }
+            }
+            if (itemStack.getItem() == Magicka.ICE_HELMET) {
+                if (entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW_BLOCK) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.ICE)){
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 5, 1, false, false, true));
+                }
+            }
+            if (itemStack.getItem() == Magicka.ICE_LEGGINGS) {
+                if (entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW_BLOCK) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.ICE)){
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 5, 1, false, false, true));
+                }
+            }
         }
     }
 

@@ -12,11 +12,6 @@ public class IceArmorMaterial implements ArmorMaterial {
     private static final int[] BASE_DURABILITY = new int[] {13, 15, 16, 11};
     private static final int[] PROTECTION_VALUES = new int[] {2, 4, 3, 2};  //helmet, chest, legs, boots
 
-       // if(player.inventory.armor.get(0).getItem().equals(Magicka.ICE_BOOTS)){
-       //    player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 1, 2, true, false));
-       // }
-
-
     @Override
     public int getDurability(EquipmentSlot slot) {
         return BASE_DURABILITY[slot.getEntitySlotId()] * 22;
