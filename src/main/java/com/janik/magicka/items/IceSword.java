@@ -1,7 +1,6 @@
 package com.janik.magicka.items;
 
 import com.janik.magicka.Magicka;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
