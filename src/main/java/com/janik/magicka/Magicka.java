@@ -21,7 +21,7 @@ public class Magicka implements ModInitializer {
 
 
     public static final ArmorMaterial ICEARMOR_MATERIAL = new IceArmorMaterial();
-    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.MISC));
+    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC));
     public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.MISC));
@@ -33,14 +33,13 @@ public class Magicka implements ModInitializer {
         Registry.register(Registry.ITEM, new Identifier("magick","enderbowl"), ENDERBOWL_ITEM);
 
         //Ice items
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_shard"), ICE_SHARD_ITEM);
-            //Tools
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new IceSword(new ToolMaterialIce()));
-            //Armor
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_helmet"), ICE_HELMET);
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_chestplate"), ICE_CHESTPLATE);
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_leggings"), ICE_LEGGINGS);
-            Registry.register(Registry.ITEM, new Identifier("magick","ice_boots"),ICE_BOOTS);
-
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_shard"), ICE_SHARD_ITEM);
+        //Tools
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_sword"), new IceSword(new ToolMaterialIce()));
+        //Armor
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_helmet"), ICE_HELMET);
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_chestplate"), ICE_CHESTPLATE);
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_leggings"), ICE_LEGGINGS);
+        Registry.register(Registry.ITEM, new Identifier("magick","ice_boots"),ICE_BOOTS);
     }
 }
