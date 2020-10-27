@@ -3,6 +3,7 @@ package com.janik.magicka;
 import com.janik.magicka.blocks.PlacedBookBlock;
 import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
 import com.janik.magicka.items.IceArmorMaterial;
+import com.janik.magicka.items.IceArmorMethode;
 import com.janik.magicka.items.IceSword;
 import com.janik.magicka.items.ToolMaterialIce;
 import net.fabricmc.api.ModInitializer;
