@@ -2,9 +2,9 @@ package com.janik.magicka;
 
 import com.janik.magicka.blocks.PlacedBookBlock;
 import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
-import com.janik.magicka.items.IceArmorMaterial;
+import com.janik.magicka.items.materials.IceArmorMaterial;
 import com.janik.magicka.items.IceSword;
-import com.janik.magicka.items.IceToolMaterial;
+import com.janik.magicka.items.materials.IceToolMaterial;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -30,17 +30,17 @@ public class Magicka implements ModInitializer {
             .icon(() -> new ItemStack(Items.BOWL))
             .build();
 
-    public static final Item BACON_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).food(new FoodComponent.Builder().hunger(1).saturationModifier(7f).alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.POISON,20*3), 0.1f).build()).rarity(Rarity.COMMON).group(MAGICKAGROUP));
-    public static final Item COOKED_BACON_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).build()).rarity(Rarity.COMMON).group(MAGICKAGROUP));
-    public static final Item ENDERBOWL_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).alwaysEdible().build()).maxCount(1).rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
-    public static final Item ICE_SHARD_ITEM = new Item(new Item.Settings().group(ItemGroup.MISC).maxCount(16).group(MAGICKAGROUP));
+    public static final Item BACON_ITEM = new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(7f).alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.POISON,20*3), 0.1f).build()).rarity(Rarity.COMMON).group(MAGICKAGROUP));
+    public static final Item COOKED_BACON_ITEM = new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).build()).rarity(Rarity.COMMON).group(MAGICKAGROUP));
+    public static final Item ENDERBOWL_ITEM = new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).alwaysEdible().build()).maxCount(1).rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
+    public static final Item ICE_SHARD_ITEM = new Item(new Item.Settings().maxCount(16).group(MAGICKAGROUP));
 
 
     public static final ArmorMaterial ICEARMOR_MATERIAL = new IceArmorMaterial();
-    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
-    public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
-    public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().group(ItemGroup.MISC).rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
-    public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().group(ItemGroup.MISC).rarity(Rarity.COMMON).group(MAGICKAGROUP));
+    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
+    public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
+    public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKAGROUP));
+    public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKAGROUP));
 
     //Placed Book
     public static final Block PLACED_BOOK = new PlacedBookBlock(FabricBlockSettings.of(Material.WOOL).nonOpaque().noCollision().sounds(BlockSoundGroup.WOOL));
@@ -66,6 +66,5 @@ public class Magicka implements ModInitializer {
         //Placed Book
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "placed_book"), PLACED_BOOK);
         PLACED_BOOK_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, new Identifier(MOD_ID, "placed_book"), BlockEntityType.Builder.create(PlacedBookBlockEntity::new, PLACED_BOOK).build(null));
-
     }
 }

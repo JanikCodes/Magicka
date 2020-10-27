@@ -1,4 +1,4 @@
-package com.janik.magicka.items;
+package com.janik.magicka.items.materials;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 

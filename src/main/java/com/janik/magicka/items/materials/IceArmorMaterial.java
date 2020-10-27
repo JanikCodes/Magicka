@@ -1,4 +1,4 @@
-package com.janik.magicka.items;
+package com.janik.magicka.items.materials;
 
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorMaterial;
