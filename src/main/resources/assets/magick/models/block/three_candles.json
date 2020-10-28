@@ -2,7 +2,8 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"1": "magick:block/candle"
+		"1": "magick:block/candle",
+		"particle": "magick:block/candle"
 	},
 	"elements": [
 		{
