@@ -16,6 +16,7 @@ import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -48,7 +49,7 @@ public class Magicka implements ModInitializer {
     public static BlockEntityType<PlacedBookBlockEntity> PLACED_BOOK_BLOCK_ENTITY;
 
     //Candle
-    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.ORGANIC_PRODUCT).nonOpaque().sounds(BlockSoundGroup.STEM));
+    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().sounds(BlockSoundGroup.STEM), ParticleTypes.FLAME);
 
     @Override
     public void onInitialize() {
