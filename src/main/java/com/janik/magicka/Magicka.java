@@ -49,7 +49,7 @@ public class Magicka implements ModInitializer {
     public static BlockEntityType<PlacedBookBlockEntity> PLACED_BOOK_BLOCK_ENTITY;
 
     //Candle
-    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().breakInstantly().sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().breakInstantly().lightLevel(10).sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
 
     @Override
     public void onInitialize() {
