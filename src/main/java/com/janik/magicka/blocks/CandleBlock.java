@@ -4,6 +4,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.particle.ParticleEffect;
@@ -16,6 +17,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 
@@ -77,6 +79,10 @@ public class CandleBlock extends Block {
         builder.add(CANDLES);
     }
 
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
+        return direction == Direction.DOWN && !this.canPlaceAt(state, world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
+    }
+
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
 
@@ -95,7 +101,6 @@ public class CandleBlock extends Block {
                 renderParticle(4, 5, 4, pos, world);
                 renderParticle(10, 8, 6, pos, world);
                 renderParticle(8, 8, 11, pos, world);
-//                renderParticle(0, 8, 0, pos, world);
                 break;
             }
             case 4: {
@@ -103,7 +108,6 @@ public class CandleBlock extends Block {
                 renderParticle(11, 8, 4, pos, world);
                 renderParticle(11, 5, 12, pos, world);
                 renderParticle(4, 9, 10, pos, world);
-//                renderParticle(0, 8, 0, pos, world);
                 break;
             }
         }
