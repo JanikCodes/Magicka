@@ -6,6 +6,7 @@ import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
 import com.janik.magicka.items.materials.IceArmorMaterial;
 import com.janik.magicka.items.IceSwordItem;
 import com.janik.magicka.items.materials.IceToolMaterial;
+import com.janik.magicka.items.materials.MagmaArmorMaterial;
 import com.janik.magicka.items.rings.IceRingItem;
 import com.janik.magicka.items.rings.MagmaRingItem;
 import dev.emi.trinkets.api.SlotGroups;
@@ -44,10 +45,16 @@ public class Magicka implements ModInitializer {
 
 
     public static final ArmorMaterial ICEARMOR_MATERIAL = new IceArmorMaterial();
-    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKA_ITEMGROUP));
-    public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKA_ITEMGROUP));
-    public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKA_ITEMGROUP));
-    public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item ICE_HELMET = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item ICE_CHESTPLATE = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item ICE_LEGGINGS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item ICE_BOOTS = new ArmorItem(ICEARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKA_ITEMGROUP));
+
+    public static final ArmorMaterial MAGMAARMOR_MATERIAL = new MagmaArmorMaterial();
+    public static final Item MAGMA_HELMET = new ArmorItem(MAGMAARMOR_MATERIAL, EquipmentSlot.HEAD, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item MAGMA_CHESTPLATE = new ArmorItem(MAGMAARMOR_MATERIAL, EquipmentSlot.CHEST, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item MAGMA_LEGGINGS = new ArmorItem(MAGMAARMOR_MATERIAL, EquipmentSlot.LEGS, new Item.Settings().rarity(Rarity.COMMON).group(MAGICKA_ITEMGROUP));
+    public static final Item MAGMA_BOOTS = new ArmorItem(MAGMAARMOR_MATERIAL, EquipmentSlot.FEET, new Item.Settings().rarity(Rarity.UNCOMMON).group(MAGICKA_ITEMGROUP));
 
     public static final Item MAGMA_RING_ITEM = new MagmaRingItem();
     public static final Item ICE_RING_ITEM = new IceRingItem();
@@ -82,6 +89,10 @@ public class Magicka implements ModInitializer {
 
         //Magma items
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"magma_ring"), MAGMA_RING_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"magma_helmet"), MAGMA_HELMET);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"magma_chestplate"), MAGMA_CHESTPLATE);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"magma_leggings"), MAGMA_LEGGINGS);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"magma_boots"), MAGMA_BOOTS);
 
         //Placed Book
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "placed_book"), PLACED_BOOK);
