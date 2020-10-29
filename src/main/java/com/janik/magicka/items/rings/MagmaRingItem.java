@@ -12,26 +12,16 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class IceRingItem extends TrinketItem {
+public class MagmaRingItem extends TrinketItem {
 
-    public IceRingItem() {
+    public MagmaRingItem() {
         super(new Settings().group(Magicka.MAGICKA_ITEMGROUP).maxCount(1));
     }
 
     @Override
     public boolean canWearInSlot(String group, String slot) {
-        //Determines what slots the trinket can be worn in, this makes it usable in the hand:ring slot
         return group.equals(SlotGroups.HAND) && slot.equals(Slots.RING);
     }
-
-    /*
-    @Override
-    public void tick(PlayerEntity player, ItemStack stack) {
-        //Just one of the methods you can override in Trinket, the ring gives you the speed effect while wearing it
-        //Though you probably shouldn't give the player a status effect every tick
-        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 0));
-    }
-    */
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
