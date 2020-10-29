@@ -1,14 +1,14 @@
 {
   "item.magick.bacon": "Bacon",
-  "item.magick.cooked_bacon": "Cooked bacon",
-  "item.magick.enderbowl": "Ender bowl",
-  "item.magick.ice_sword": "Ice sword",
-  "item.magick.ice_shard": "Ice shard",
-  "item.magick.ice_helmet": "Ice helmet",
-  "item.magick.ice_chestplate": "Ice chestplate",
-  "item.magick.ice_leggings": "Ice leggings",
-  "item.magick.ice_boots": "Ice boots",
+  "item.magick.cooked_bacon": "Cooked Bacon",
+  "item.magick.enderbowl": "Ender Bowl",
+  "item.magick.ice_sword": "Ice Sword",
+  "item.magick.ice_shard": "Ice Shard",
+  "item.magick.ice_helmet": "Ice Helmet",
+  "item.magick.ice_chestplate": "Ice Chestplate",
+  "item.magick.ice_leggings": "Ice Leggings",
+  "item.magick.ice_boots": "Ice Boots",
   "block.magick.candle": "Candle",
   "itemGroup.magick.itemgroup": "Magicka",
-  "item.magick.ice_ring": "Ice ring"
+  "item.magick.ice_ring": "Ice Ring"
 }
