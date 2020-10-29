@@ -15,6 +15,9 @@ dependencies {
 	mappings "net.fabricmc:yarn:1.16.3+build.47:v2"
 	modImplementation "net.fabricmc:fabric-loader:0.10.5+build.213"
 
+	//Trinket api
+	modImplementation "com.github.emilyploszaj:trinkets:2.6.6"
+
 	//Fabric api
 	modImplementation "net.fabricmc.fabric-api:fabric-api:0.24.1+build.412-1.16"
 }
@@ -64,5 +67,15 @@ publishing {
 	repositories {
 		// uncomment to publish to the local maven
 		// mavenLocal()
+	}
+}
+
+repositories {
+	maven {
+		url = "https://jitpack.io"
+	}
+	maven {
+		name = "NerdHubMC"
+		url = "https://maven.abusedmaster.xyz/"
 	}
 }

@@ -53,6 +53,11 @@ public class Magicka implements ModInitializer {
 
     @Override
     public void onInitialize() {
+
+        //trinkets
+        TrinketSlots.addSlot(SlotGroups.HAND, Slots.RING, new Identifier("trinkets", "textures/item/empty_trinket_slot_ring.png"));
+
+
         //Others
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"bacon"), BACON_ITEM);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"cooked_bacon"), COOKED_BACON_ITEM);
