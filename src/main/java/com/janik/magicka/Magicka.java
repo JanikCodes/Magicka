@@ -11,6 +11,7 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
+import net.minecraft.block.SeaPickleBlock;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -49,7 +50,7 @@ public class Magicka implements ModInitializer {
     public static BlockEntityType<PlacedBookBlockEntity> PLACED_BOOK_BLOCK_ENTITY;
 
     //Candle
-    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().breakInstantly().sounds(BlockSoundGroup.WOOD), ParticleTypes.FLAME);
+    public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().breakInstantly().sounds(BlockSoundGroup.WOOD).luminance((state) -> 3 + 3 * state.get(CandleBlock.CANDLES)), ParticleTypes.FLAME);
 
     @Override
     public void onInitialize() {
