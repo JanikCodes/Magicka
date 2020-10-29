@@ -2,22 +2,13 @@ package com.janik.magicka.mixins;
 
 import com.janik.magicka.Magicka;
 import com.janik.magicka.utils.BiomeUtils;
-import dev.emi.trinkets.TrinketSlot;
 import dev.emi.trinkets.api.*;
-import net.fabricmc.fabric.impl.biome.InternalBiomeUtils;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.screen.slot.Slot;
-import net.minecraft.tag.BlockTags;
-import net.minecraft.tag.FluidTags;
 import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeKeys;
-import net.minecraft.world.biome.source.BiomeArray;
-import net.minecraft.world.biome.source.BiomeSource;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -32,11 +23,11 @@ public abstract class PlayerEntityMixins {
         PlayerEntity entity = (PlayerEntity)(Object)this;
 
         if(!entity.getEntityWorld().isClient) {
-            IceArmorEffect(entity);
+            iceArmorEffect(entity);
         }
     }
 
-    private static void IceArmorEffect(PlayerEntity entity){
+    private static void iceArmorEffect(PlayerEntity entity){
 
         Biome biome = entity.getEntityWorld().getBiome(entity.getBlockPos());
 
