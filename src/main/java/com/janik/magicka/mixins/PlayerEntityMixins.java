@@ -1,8 +1,10 @@
 package com.janik.magicka.mixins;
 
 import com.janik.magicka.Magicka;
+import com.janik.magicka.utils.BiomeUtils;
 import dev.emi.trinkets.TrinketSlot;
 import dev.emi.trinkets.api.*;
+import net.fabricmc.fabric.impl.biome.InternalBiomeUtils;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -35,22 +37,23 @@ public abstract class PlayerEntityMixins {
     }
 
     private static void IceArmorEffect(PlayerEntity entity){
-        if (entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW_BLOCK) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.ICE) || entity.world.getBlockState(entity.getBlockPos()).isOf(Blocks.SNOW)){
-            if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE && entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET && entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS && entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 5, 0, false, false, true));
-            }
-            if (entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 5, 0, false, false, true));
-            }
-        }else if(entity.getEntityWorld().getBiome(entity.getBlockPos()).equals(BiomeKeys.DESERT) || entity.isInLava()){
-            if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE || entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET || entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS || entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
 
+        Biome biome = entity.getEntityWorld().getBiome(entity.getBlockPos());
+
+        if(BiomeUtils.isWarmBiome(biome) || entity.isInLava()){
+            if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE || entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET || entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS || entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
                 TrinketComponent comp = TrinketsApi.TRINKETS.get(entity);
                 ItemStack stack = comp.getStack(SlotGroups.HAND, Slots.RING);
-
                 if(stack.getItem() != Magicka.ICE_RING_ITEM){
-                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20, 1, false, false, true));
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 5, 1, false, false, true));
                 }
+            }
+        } else if (BiomeUtils.isColdBiome(biome)){
+            if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE && entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET && entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS && entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 5, 0, false, false, true));
+            }
+            if (entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 0, false, false, true));
             }
         }
     }
