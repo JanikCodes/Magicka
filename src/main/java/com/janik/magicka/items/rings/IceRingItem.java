@@ -33,7 +33,7 @@ public class IceRingItem extends TrinketItem {
     public void tick(PlayerEntity player, ItemStack stack) {
         //Just one of the methods you can override in Trinket, the ring gives you the speed effect while wearing it
         //Though you probably shouldn't give the player a status effect every tick
-        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 19, 0));
+        player.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 5, 0));
     }
 
     @Override
