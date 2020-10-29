@@ -4,8 +4,12 @@ import com.janik.magicka.blocks.CandleBlock;
 import com.janik.magicka.blocks.PlacedBookBlock;
 import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
 import com.janik.magicka.items.materials.IceArmorMaterial;
-import com.janik.magicka.items.IceSword;
+import com.janik.magicka.items.IceSwordItem;
 import com.janik.magicka.items.materials.IceToolMaterial;
+import com.janik.magicka.items.rings.IceRingItem;
+import dev.emi.trinkets.api.SlotGroups;
+import dev.emi.trinkets.api.Slots;
+import dev.emi.trinkets.api.TrinketSlots;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -51,12 +55,13 @@ public class Magicka implements ModInitializer {
     //Candle
     public static final Block CANDLE_BLOCK = new CandleBlock(FabricBlockSettings.of(Material.SUPPORTED).nonOpaque().breakInstantly().sounds(BlockSoundGroup.WOOD).luminance((state) -> 3 + 3 * state.get(CandleBlock.CANDLES)), ParticleTypes.FLAME);
 
+
+    public static final Item ICE_RING_ITEM = new IceRingItem();
     @Override
     public void onInitialize() {
 
         //trinkets
         TrinketSlots.addSlot(SlotGroups.HAND, Slots.RING, new Identifier("trinkets", "textures/item/empty_trinket_slot_ring.png"));
-
 
         //Others
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"bacon"), BACON_ITEM);
@@ -65,8 +70,9 @@ public class Magicka implements ModInitializer {
 
         //Ice items
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_shard"), ICE_SHARD_ITEM);
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_ring"), ICE_RING_ITEM);
         //Tools
-        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_sword"), new IceSword(new IceToolMaterial()));
+        Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_sword"), new IceSwordItem(new IceToolMaterial()));
         //Armor
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_helmet"), ICE_HELMET);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID,"ice_chestplate"), ICE_CHESTPLATE);

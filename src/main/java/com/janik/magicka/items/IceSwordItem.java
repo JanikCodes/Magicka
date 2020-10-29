@@ -6,9 +6,9 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 
-public class IceSword extends SwordItem {
+public class IceSwordItem extends SwordItem {
 
-    public IceSword(ToolMaterial material) {
+    public IceSwordItem(ToolMaterial material) {
         super(material, -1, -2.2f, new Item.Settings().group(Magicka.MAGICKA_ITEMGROUP));
     }
 
