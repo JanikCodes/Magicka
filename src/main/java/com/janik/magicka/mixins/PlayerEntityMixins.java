@@ -8,6 +8,8 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tag.BlockTags;
+import net.minecraft.tag.FluidTags;
+import net.minecraft.util.math.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -23,17 +25,15 @@ public abstract class PlayerEntityMixins {
 
         if(!entity.getEntityWorld().isClient) {
             if (entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW_BLOCK) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SNOW) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.ICE) || entity.world.getBlockState(entity.getBlockPos()).isOf(Blocks.SNOW)){
-                if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE) {
-                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.STRENGTH, 20 * 5, 0, false, false, true));
-                }
-                if (entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET) {
+                if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE && entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET && entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS && entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
                     entity.addStatusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 20 * 5, 0, false, false, true));
-                }
-                if (entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS) {
-                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.RESISTANCE, 20 * 5, 0, false, false, true));
                 }
                 if (entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
                     entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SPEED, 20 * 5, 0, false, false, true));
+                }
+            }else if(entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.SAND) || entity.world.getBlockState(entity.getBlockPos().down()).isOf(Blocks.RED_SAND) || entity.world.getBlockState(entity.getBlockPos().down()).isIn(BlockTags.SAND) || entity.isSubmergedIn(FluidTags.LAVA) || entity.isInLava()){
+                if (entity.getEquippedStack(EquipmentSlot.CHEST).getItem() == Magicka.ICE_CHESTPLATE || entity.getEquippedStack(EquipmentSlot.HEAD).getItem() == Magicka.ICE_HELMET || entity.getEquippedStack(EquipmentSlot.LEGS).getItem() == Magicka.ICE_LEGGINGS || entity.getEquippedStack(EquipmentSlot.FEET).getItem() == Magicka.ICE_BOOTS) {
+                    entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 20 * 5, 1, false, false, true));
                 }
             }
         }
