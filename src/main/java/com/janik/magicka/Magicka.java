@@ -1,9 +1,11 @@
 package com.janik.magicka;
 
 import com.janik.magicka.register.Blocks;
+import com.janik.magicka.register.Items;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 
 
@@ -14,7 +16,7 @@ public class Magicka implements ModInitializer {
     //Item group for our mod
     public static final ItemGroup MAGICKA_ITEMGROUP = FabricItemGroupBuilder.create(
             new Identifier(MOD_ID, "itemgroup"))
-            .icon(() -> new ItemStack(Items.BOWL))
+            .icon(() -> new ItemStack(Items.ENDERBOWL_ITEM))
             .build();
 
 
@@ -22,6 +24,6 @@ public class Magicka implements ModInitializer {
     public void onInitialize() {
 
         Blocks.registerBlocks();
-        com.janik.magicka.register.Items.registerItems();
+        Items.registerItems();
     }
 }
