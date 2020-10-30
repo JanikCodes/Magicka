@@ -3,6 +3,7 @@ package com.janik.magicka;
 import com.janik.magicka.blocks.CandleBlock;
 import com.janik.magicka.blocks.PlacedBookBlock;
 import com.janik.magicka.blocks.entity.PlacedBookBlockEntity;
+import com.janik.magicka.effects.FreezeEffect;
 import com.janik.magicka.items.materials.IceArmorMaterial;
 import com.janik.magicka.items.IceSwordItem;
 import com.janik.magicka.items.materials.IceToolMaterial;
@@ -23,6 +24,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
@@ -77,6 +79,8 @@ public class Magicka implements ModInitializer {
     private static final StructureFeature<DefaultFeatureConfig> MY_STRUCTURE = new MyFeature(DefaultFeatureConfig.CODEC);
     public static final ConfiguredStructureFeature<?, ?> MY_CONFIGURED = MY_STRUCTURE.configure(DefaultFeatureConfig.DEFAULT);
 
+    public static final StatusEffect FREEZE_EFFECT = new FreezeEffect();
+
     @Override
     public void onInitialize() {
 
@@ -125,5 +129,9 @@ public class Magicka implements ModInitializer {
         //Candle
         Registry.register(Registry.BLOCK, new Identifier(MOD_ID, "candle"), CANDLE_BLOCK);
         Registry.register(Registry.ITEM, new Identifier(MOD_ID, "candle"), new BlockItem(CANDLE_BLOCK, new Item.Settings().group(MAGICKA_ITEMGROUP)));
+
+
+        //Effect
+        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "freeze"), FREEZE_EFFECT);
     }
 }
