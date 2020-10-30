@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntityMixins {
+public class PlayerEntityMixins {
 
 
     @Inject(method = "tick", at=@At("TAIL"))
