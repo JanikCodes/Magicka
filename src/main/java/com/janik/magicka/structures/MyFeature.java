@@ -35,8 +35,8 @@ public class MyFeature extends StructureFeature<DefaultFeatureConfig> {
             int x = chunkX * 16;
             int z = chunkZ * 16;
             int y = chunkGenerator.getHeight(x, z, Heightmap.Type.WORLD_SURFACE_WG);
-            System.out.println(y + " : Y POS");
-            BlockPos pos = new BlockPos(x, (y) , z);
+            System.out.println(y  + " : Y POS");
+            BlockPos pos = new BlockPos(x, y - 1 , z);
             BlockRotation rotation = BlockRotation.random(this.random);
             MyGenerator.addPieces(manager, pos, rotation, this.children);
             this.setBoundingBoxFromChildren();
