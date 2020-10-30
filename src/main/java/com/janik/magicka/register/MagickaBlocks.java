@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 
-public class Blocks {
+public class MagickaBlocks {
 
     public static final Block PLACED_BOOK = new PlacedBookBlock(FabricBlockSettings.of(Material.WOOL).nonOpaque().noCollision().sounds(BlockSoundGroup.WOOL));
     public static BlockEntityType<PlacedBookBlockEntity> PLACED_BOOK_BLOCK_ENTITY;

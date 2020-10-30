@@ -21,7 +21,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
-public class Items {
+public class MagickaItems {
 
     public static final Item BACON_ITEM = new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(1).saturationModifier(7f).alwaysEdible().statusEffect(new StatusEffectInstance(StatusEffects.POISON,20*3), 0.1f).build()).rarity(Rarity.COMMON).group(Magicka.MAGICKA_ITEMGROUP));
     public static final Item COOKED_BACON_ITEM = new Item(new Item.Settings().food(new FoodComponent.Builder().hunger(6).saturationModifier(12f).build()).rarity(Rarity.COMMON).group(Magicka.MAGICKA_ITEMGROUP));

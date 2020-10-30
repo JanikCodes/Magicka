@@ -1,7 +1,6 @@
 package com.janik.magicka.mixins;
 
-import com.janik.magicka.Magicka;
-import com.janik.magicka.register.Blocks;
+import com.janik.magicka.register.MagickaBlocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +24,7 @@ public class ItemMixins {
         PlayerEntity player = context.getPlayer();
         BlockPos blockPos = context.getBlockPos();
         if (player.isSneaking() && side == Direction.UP && world.isAir(blockPos.offset(Direction.UP, 1))){
-            world.setBlockState(blockPos.offset(Direction.UP, 1), Blocks.PLACED_BOOK.getPlacementState(new ItemPlacementContext(context)));
+            world.setBlockState(blockPos.offset(Direction.UP, 1), MagickaBlocks.PLACED_BOOK.getPlacementState(new ItemPlacementContext(context)));
             if (player.isCreative()) return;
             stack.setCount(stack.getCount()-1);
         }
