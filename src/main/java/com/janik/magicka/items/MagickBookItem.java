@@ -20,6 +20,7 @@ public class MagickBookItem extends Item {
         super(settings);
     }
 
+    //test
 
 
     @Override
