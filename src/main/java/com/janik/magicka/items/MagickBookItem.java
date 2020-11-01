@@ -38,14 +38,6 @@ public class MagickBookItem extends Item {
         return new TypedActionResult<>(ActionResult.SUCCESS, playerEntity.getStackInHand(hand));
     }
 
-   /*
-    if (stack.hasTagCompound() && stack.getTagCompound().hasKey("Uses"))
-    {
-        lores.add(Integer.toString(stack.getTagCompound().getInteger("Uses")));
-    }
-
-     */
-
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 
