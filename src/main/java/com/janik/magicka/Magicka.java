@@ -1,6 +1,7 @@
 package com.janik.magicka;
 
 import com.janik.magicka.register.MagickaBlocks;
+import com.janik.magicka.register.MagickaEffects;
 import com.janik.magicka.register.MagickaItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
@@ -25,5 +26,6 @@ public class Magicka implements ModInitializer {
 
         MagickaBlocks.registerBlocks();
         MagickaItems.registerItems();
+        MagickaEffects.registerEffects();
     }
 }
