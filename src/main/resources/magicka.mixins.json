@@ -5,8 +5,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "ItemMixins",
-    "PlayerEntityMixins",
-    "DefaultBiomeFeaturesMixins"
+    "PlayerEntityMixins"
   ],
   "client": [
     "MouseMixins",
