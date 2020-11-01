@@ -1,6 +1,7 @@
 package com.janik.magicka.mixins;
 
 import com.janik.magicka.Magicka;
+import com.janik.magicka.register.MagickaEffects;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.Mouse;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -31,7 +32,7 @@ public abstract class MouseMixins {
     public void onCursorPos(CallbackInfo cbi) {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null && client.isWindowFocused() && isCursorLocked()) {
-            if (player.hasStatusEffect(Magicka.FREEZE_EFFECT)) {
+            if (player.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)) {
                 cbi.cancel();
             }
         }
@@ -41,10 +42,10 @@ public abstract class MouseMixins {
     public void updateMouse(CallbackInfo cbi) {
         ClientPlayerEntity player = MinecraftClient.getInstance().player;
         if (player != null && client.isWindowFocused() && isCursorLocked()) {
-            if (player.hasStatusEffect(Magicka.FREEZE_EFFECT)){
+            if (player.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)){
                 x = currentX;
                 y = currentY;
-                if (player.getStatusEffect(Magicka.FREEZE_EFFECT).getDuration() == 1){
+                if (player.getStatusEffect(MagickaEffects.FREEZE_EFFECT).getDuration() == 1){
                     InputUtil.setCursorParameters(this.client.getWindow().getHandle(), 212995, x, y);
                 }
                 cbi.cancel();

@@ -1,6 +1,7 @@
 package com.janik.magicka.mixins;
 
 import com.janik.magicka.Magicka;
+import com.janik.magicka.register.MagickaEffects;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.LivingEntityRenderer;
@@ -16,14 +17,14 @@ public class LivingEntityRendererMixins {
 
     @Inject(method = "render", at = @At("HEAD"))
     public void onRenderHead(LivingEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo cbi){
-        if (livingEntity.hasStatusEffect(Magicka.FREEZE_EFFECT)){
+        if (livingEntity.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)){
 
         }
     }
 
     @Inject(method = "render", at = @At("TAIL"))
     public void onRenderTail(LivingEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i, CallbackInfo cbi){
-        if (livingEntity.hasStatusEffect(Magicka.FREEZE_EFFECT)){
+        if (livingEntity.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)){
 
         }
     }

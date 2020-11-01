@@ -1,6 +1,7 @@
 package com.janik.magicka.mixins;
 
 import com.janik.magicka.Magicka;
+import com.janik.magicka.register.MagickaEffects;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import org.jetbrains.annotations.Nullable;
@@ -17,14 +18,14 @@ public class MinecraftClientMixins {
 
     @Inject(method = "doAttack", at = @At("HEAD"), cancellable = true)
     public void onDoAttack(CallbackInfo cbi){
-        if (player.hasStatusEffect(Magicka.FREEZE_EFFECT)){
+        if (player.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)){
             cbi.cancel();
         }
     }
 
     @Inject(method = "doItemUse", at = @At("HEAD"), cancellable = true)
     public void doItemUse(CallbackInfo cbi){
-        if (player.hasStatusEffect(Magicka.FREEZE_EFFECT)){
+        if (player.hasStatusEffect(MagickaEffects.FREEZE_EFFECT)){
             cbi.cancel();
         }
     }
