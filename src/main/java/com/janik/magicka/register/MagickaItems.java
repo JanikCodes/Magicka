@@ -2,6 +2,7 @@ package com.janik.magicka.register;
 
 import com.janik.magicka.Magicka;
 import com.janik.magicka.items.IceSwordItem;
+import com.janik.magicka.items.MagickBookItem;
 import com.janik.magicka.items.materials.IceArmorMaterial;
 
 import com.janik.magicka.items.materials.IceToolMaterial;
@@ -12,6 +13,7 @@ import com.janik.magicka.items.rings.MagmaRingItem;
 import dev.emi.trinkets.api.SlotGroups;
 import dev.emi.trinkets.api.Slots;
 import dev.emi.trinkets.api.TrinketSlots;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -20,6 +22,8 @@ import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
+
+import javax.swing.*;
 
 public class MagickaItems {
 
@@ -40,6 +44,7 @@ public class MagickaItems {
     public static final Item MAGMA_RING_ITEM = new MagmaRingItem();
     public static final Item ICE_RING_ITEM = new IceRingItem();
 
+    public static final Item MAGICK_BOOK = new MagickBookItem(new Item.Settings().group(Magicka.MAGICKA_ITEMGROUP));
 
     public static void registerItems(){
 
@@ -59,5 +64,7 @@ public class MagickaItems {
         Registry.register(Registry.ITEM, new Identifier(Magicka.MOD_ID,"magma_chestplate"), MAGMA_CHESTPLATE);
         Registry.register(Registry.ITEM, new Identifier(Magicka.MOD_ID,"magma_leggings"), MAGMA_LEGGINGS);
         Registry.register(Registry.ITEM, new Identifier(Magicka.MOD_ID,"magma_boots"), MAGMA_BOOTS);
+
+        Registry.register(Registry.ITEM, new Identifier(Magicka.MOD_ID, "magick_book"), MAGICK_BOOK);
     }
 }
