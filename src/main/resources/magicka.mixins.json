@@ -9,6 +9,10 @@
     "DefaultBiomeFeaturesMixins"
   ],
   "client": [
+    "MouseMixins",
+    "KeyBindingMixins",
+    "MinecraftClientMixins",
+    "LivingEntityRendererMixins"
   ],
   "injectors": {
     "defaultRequire": 1
